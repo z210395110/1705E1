@@ -13,6 +13,7 @@ package com.bobo.common.utils;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 /** 
  * @ClassName: DateUtil 
@@ -21,6 +22,28 @@ import java.util.Date;
  * @date: 2019年8月7日 下午4:22:36  
  */
 public class DateUtil {
+	/**
+	 * 产生在指定时间范围的随机日期
+	 * @Title: getRandom 
+	 * @Description: TODO
+	 * @param start
+	 * @param end
+	 * @return
+	 * @return: Date
+	 */
+	public static Date getRandom(Date start,Date end) {
+		
+		long timeStart = start.getTime();
+		long endStart = end.getTime();
+
+		long x =  (long) (Math.random() * (endStart - timeStart +1 ) + timeStart) ;
+		
+		return new Date(x);
+		
+	}
+	
+	
+	
 	/*
 	* 方法1：(5分)
 	* 给一个时间对象，返回该时间所在月的1日0时0分0秒。例如一个Date对象的值是2019-05-18 11:37:22
